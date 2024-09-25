@@ -8,4 +8,6 @@ class QuestionAnswerPair(BaseModel):
 
 class Interview(BaseModel):
     date: datetime
+    name: str
     qa_list: List[QuestionAnswerPair]
+    

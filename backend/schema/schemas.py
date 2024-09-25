@@ -14,13 +14,15 @@ from models.interviews import Interview, QuestionAnswerPair
 # Serialize individual QuestionAnswerPair
 def serialize_question_answer_pair(qap: QuestionAnswerPair) -> dict:
     return {
-        [qap.question, qap.answer]
-    }
+        "question":qap.question,
+        "answer": qap.answer
+        }
 
 # Serialize Interview object to BSON-compatible format
 def individual_serial(interview: Interview) -> dict:
     return {
         "date": interview.date,  # datetime is already BSON-compatible
+        "name": interview.name,
         "qa_list": [serialize_question_answer_pair(qap) for qap in interview.qa_list]
     }
 
