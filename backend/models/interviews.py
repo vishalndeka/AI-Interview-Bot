@@ -7,7 +7,10 @@ class QuestionAnswerPair(BaseModel):
     answer: str
 
 class Interview(BaseModel):
-    date: datetime
-    name: str
+    #_id: str # changed
+    start_time: datetime
+    end_time: datetime
+    user_id: str
+    topic_name: str
     qa_list: List[QuestionAnswerPair]
     

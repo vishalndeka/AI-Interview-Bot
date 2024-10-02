@@ -1,8 +1,15 @@
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+from pathlib import Path
 
-uri = "mongodb+srv://neerzmu4l:4vmPQousjn5JJxlg@cluster0.bduo4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+env_path = Path(__file__).resolve().parent.parent.parent / '.env'
+load_dotenv(env_path)
+uri = os.getenv("MONGODB_URI")
 client = MongoClient(uri)
 
 db = client.interview_db
 
-collection_name = db["interview_collection"]
+interviews_collection = db["interview_collection"]
+users_collection = db['users_collection']
+print(uri)
