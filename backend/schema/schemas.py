@@ -10,7 +10,6 @@ def serialize_question_answer_pair(qap: QuestionAnswerPair) -> dict:
 # Serialize Interview object to BSON-compatible format
 def individual_serial_interview(interview: Interview) -> dict:
     return {
-        # "_id": interview._id,
         "start_time": interview.start_time,
         "end_time": interview.end_time,  # datetime is already BSON-compatible
         "user_id": interview.user_id,
