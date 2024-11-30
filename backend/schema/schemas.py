@@ -14,6 +14,7 @@ def individual_serial_interview(interview: Interview) -> dict:
         "end_time": interview.end_time,  # datetime is already BSON-compatible
         "user_id": interview.user_id,
         "topic_name": interview.topic_name,
+        "model_name": interview.model_name,
         "qa_list": [serialize_question_answer_pair(qap) for qap in interview.qa_list]
     }
 

@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 from  datetime import datetime
 
 class QuestionAnswerPair(BaseModel):
@@ -12,5 +12,5 @@ class Interview(BaseModel):
     end_time: datetime
     user_id: str
     topic_name: str
+    model_name: str
     qa_list: List[QuestionAnswerPair]
-    

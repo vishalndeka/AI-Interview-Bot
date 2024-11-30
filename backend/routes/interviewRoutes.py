@@ -18,6 +18,7 @@ async def get_interviews():
             "end_time": interview.get("end_time"),
             "user_id": interview.get("user_id"),
             "topic_name": interview.get("topic_name"),
+            "model_name": interview.get("model_name"),
             "qa_list": interview.get("qa_list", [])
         }
         for interview in interviews
